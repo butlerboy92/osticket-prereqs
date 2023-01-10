@@ -124,5 +124,45 @@ Open IIS as Admin ⇒ PHP Manager ⇒ Register new PHP version ⇒ Browse for PH
 <br />
 
 <strong>Step 8:</strong> Rename sampleost-config.php & assign permissions
-- Go to C:\inetpub\wwwroot\osTicket\include\ost-sampleconfig.php
+- Go to C:\inetpub\wwwroot\osTicket\include\ost-sampleconfig.php<br />
+  - Find include folder and open it
+  - Find ost-.sampleconfig.php<br />
 (<strong>Note: </strong>change ost-sampleconfig to ost-config)
+  - Right click the file and go to properties
+  - Click Security tab and then advanced
+  - Disable inheritance (click remove all inheritance when it prompts)
+  - Click Add Permission, then click Select a principal
+  - Enter "Everyone" (click check names just to be sure after)
+  - Tick mark "Full Control"
+  
+  <br />
+  
+<strong>Step 9:</strong> Setting up osTicket & Database<br />
+  <p>Here you will continue into osTicket so it can be set up. You'll name your Helpdesk whatever you'd like, I'll just use my name. Fill out the rest of System              Settings section and the Admin User section.</p>
+(<strong>Note:</strong> Default Email and Email Address for admin must be different!)
+
+  <p><img src="https://i.imgur.com/o1RwJgn.jpg" height="60%" width="60%" alt="Helpdesk Setup"</p>
+  
+  <br /> 
+  
+  <em>Pssst....</em> <strong>Download Heidi SQL <a href="https://drive.google.com/drive/u/1/folders/1APMfNyfNzcxZC6EzdaNfdZsUwxWYChf6">file</a> now</strong>
+  <p><img src="https://i.imgur.com/sTb95fa.jpg" height="60%" width="60%" alt="HeidiSQL"</p><br />
+    (<strong>Note: </strong> Username: <em>root</em> Password: <em>Password1</em>)
+    <p><img src="https://i.imgur.com/frTTzBP.jpg" height="60%" width="60%" alt="new database"></p>
+    <p>In osTicket in the Database Section make sure MySQL username is root and MySQL Password is Password1.
+        Then within HeidiSQL right click Unnamed and go to new then Database and name it osTicket</p>
+  <p><img src="https://i.imgur.com/XWJTAKO.jpg" height="60%" width="60%" alt="naming database"></p>
+  Use the same name in osTicket Browser in the Database section for MySQL Database and then click install. 
+  You should end up with something like the image below.
+  <p><img src="https://i.imgur.com/mgLtJ2s.jpg" height="60%" width="60%" alt="osTicket Installed"></p>
+  <br />
+  (<strong>Note: </strong> You will have to clean up by deleting C:\inetpub\wwwroot\osTicket\setup (Shown below))
+  <p><img src="https://i.imgur.com/iZl6t9O.jpg" height="60%" width="60%" alt="with setup"></p>
+  <p><img src="https://i.imgur.com/hlSzHfU.jpg" height="60%" width="60%" alt="without setup"></p>
+  <p>Finally go back to the ost-config.php file from before when you added a permission for everyone and set the permission to "read" & "read & execute"</p>
+  <br />
+  <p>Admin Link: <strong>http://localhost/osTicket/scp/admin.php</strong> (this is for your Admins/Staff to login and work tickets)<br />
+  User Link: <strong>http://localhost/osTicket/</strong> (this is for users to create tickets)</p>
+  
+  <p><strong>🎊CONGRATULATIONS🎊 You have installed osTicket Help Desk Ticketing System</strong></p>
+  
